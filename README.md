@@ -14,7 +14,7 @@ and
 npm install
 npm run start
 ```
-## Must need to know
+## Need to know
 - __ES6__ (react 컴포넌트 작성시 자주 사용되는 ES6 문법)
     - [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/class)
     - [import](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/import) / [export](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/export)
