@@ -31,7 +31,7 @@ npm run start
         - form(controlled/uncontrolled components)
         - event handling
         - lifting state up
-- __Redux__ (효율적인 상태 관리를 위한 [redux](https://deminoth.github.io/redux/))
+- __Redux__ (효율적인 상태 관리를 위한 [Redux](https://deminoth.github.io/redux/) / [Example code](https://deminoth.github.io/redux/introduction/Examples.html))
     - action, reducer, store...
 - __Etc__
     - 환경설정 관련 이슈 대응을 위한 [webpack](https://webpack.js.org/) 학습
@@ -45,6 +45,13 @@ npm run start
     - component 재사용 고려 범위를 page definition에 근거한 region 단위로 제한.
     - region을 벗어나면 동일 UI일 지라도 component를 재작성하여 리즌 단위로 폴더 구성하여 관리.
     - scss 파일도 컴포넌트와 동일한 계층으로 구성하고 관리.
+- __[유용한 모듈](https://deminoth.github.io/redux/introduction/Ecosystem.html)__
+    - react-redux (require)
+    - redux-thunk (비동기 액션을 만들기 위한 모듈)
+    - redux-logger (모든 리덕스 액션과 다음 상태에 대한 기록)
+    - redux-form (리덕스 스토어를 통한 from 컴포넌트 상태 관리 지원)
+    - redux-devtools (리듀서 에러 핸들링을 위한 액션 로거)
+    - reselect (효율적인 데이터 셀렉터)
 
 ## Reference
 #### 적용 사례 & 후기
