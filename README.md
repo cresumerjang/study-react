@@ -11,9 +11,8 @@ cd my_app
 ```
 and
 ```
-npm install --save react-redux
-npm install --save-dev redux redux-devtools
-yarn start
+npm install
+npm run start
 ```
 ## Must need to know
 - __ES6__ (react 컴포넌트 작성시 자주 사용되는 ES6 문법)
@@ -47,12 +46,13 @@ yarn start
     - region을 벗어나면 동일 UI일 지라도 component를 재작성하여 리즌 단위로 폴더 구성하여 관리.
     - scss 파일도 컴포넌트와 동일한 계층으로 구성하고 관리.
 
-## 적용 사례 & 후기
+## Reference
+#### 적용 사례 & 후기
 - http://huns.me/development/1953
 - https://jae-kwang.github.io/blog/2018/02/04/project-react/
 - https://www.ridicorp.com/blog/2017/09/13/how-to-develop-ridistory-front/
 
-## 가이드, 예제코드
+#### 가이드, 예제코드
 - https://deminoth.github.io/redux/
 - http://d2.naver.com/helloworld/1848131
 - https://github.com/reactjs/redux
