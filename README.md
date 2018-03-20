@@ -48,6 +48,7 @@ npm run start
 - __[유용한 모듈](https://deminoth.github.io/redux/introduction/Ecosystem.html)__
     - react-redux (require)
     - redux-thunk (비동기 액션을 만들기 위한 모듈)
+    - axios
     - redux-logger (모든 리덕스 액션과 다음 상태에 대한 기록)
     - redux-form (리덕스 스토어를 통한 from 컴포넌트 상태 관리 지원)
     - redux-devtools (리듀서 에러 핸들링을 위한 액션 로거)
