@@ -45,7 +45,7 @@ npm run start
     - component 재사용 고려 범위를 page definition에 근거한 region 단위로 제한.
     - region을 벗어나면 동일 UI일 지라도 component를 재작성하여 리즌 단위로 폴더 구성하여 관리.
     - scss 파일도 컴포넌트와 동일한 계층으로 구성하고 관리.
-- __[유용한 모듈](https://deminoth.github.io/redux/introduction/Ecosystem.html)__
+- __[유용한 모듈](https://deminoth.github.io/redux/introduction/Ecosystem.html) & 라이브러리__
     - react-redux (require)
     - redux-thunk (비동기 액션을 만들기 위한 모듈)
     - axios
@@ -53,6 +53,7 @@ npm run start
     - redux-form (리덕스 스토어를 통한 from 컴포넌트 상태 관리 지원)
     - redux-devtools (리듀서 에러 핸들링을 위한 액션 로거)
     - reselect (효율적인 데이터 셀렉터)
+    - lodash
 
 ## Reference
 #### 적용 사례 & 후기
