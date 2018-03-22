@@ -15,7 +15,10 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.5",
     "redux": "^3.7.2",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "youtube-api-search": "0.0.5"
   }
 }
