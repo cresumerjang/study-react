@@ -38,3 +38,34 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+
+
+
+// class VideoDetail extends Component {
+//   constructor( props ) {
+//     if( !props ){
+//       return <div>목록에서 비디오를 선택하세요.</div>;
+//     }
+//     super( props );
+//
+//     this.state = {
+//       title: props.video.snippet.title,
+//       description: props.video.snippet.description,
+//       url: `https://www.youtube.com/embed/${ props.video.id.videoId }`
+//     };
+//   }
+//
+//   componentDidMount = () => {
+//       window.scrollTo(0, 0);
+//   }
+//
+//   render() {
+//     return (
+//         <div>
+//         <iframe src={ this.state.url }/>
+//         <p><strong>{ this.state.title }</strong></p>
+//         <p>{ this.state.description }</p>
+//         </div>
+//     );
+//   }
+// }
