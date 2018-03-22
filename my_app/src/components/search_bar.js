@@ -4,10 +4,11 @@ import React, { Component } from 'react';
 //     return <input />
 // };
 class SearchBar extends Component {
-    constructor(props) {
-        super(props);
+    constructor({ searchYoutube }) {
+        super(searchYoutube);
 
         this.state = {
+            searchYoutube,
             placeholder: '키워드를 입력해 주세요.',
             value: ''
         };
@@ -17,6 +18,7 @@ class SearchBar extends Component {
     // 컴포넌트 인스턴스 생성시 this를 자동으로 바인딩 해주지 않기 때문에 constructor 에서 명시적으로 추가 바인딩 해줘야함.
     onInputChange = event => {
         this.setState({value: event.target.value});
+        this.state.searchYoutube(event.target.value);
     }
 
     render() {
@@ -29,7 +31,7 @@ class SearchBar extends Component {
                     onChange={this.onInputChange}
                     value={this.state.value}
                 />
-                {this.state.value}
+                비디오를 검색합니다.
             </div>
         )
     }
