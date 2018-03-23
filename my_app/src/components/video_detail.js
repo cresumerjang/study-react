@@ -9,7 +9,8 @@ const VideoDetail = ({ video }) => {
 
     return (
         <div>
-        <iframe src={ url }/>
+            <h1>React Axios Test</h1>
+        <iframe width="700px" height="500px" src={ url }/>
         <p><strong>{ video.snippet.title }</strong></p>
         <p>{ video.snippet.description }</p>
         </div>
