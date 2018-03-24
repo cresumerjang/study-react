@@ -8,8 +8,7 @@ class SearchBar extends Component {
         super(searchYoutube);
 
         this.state = {
-            searchYoutube,
-            placeholder: '키워드를 입력해 주세요.',
+            placeholder: '키워드를 입력해 주세요dd.',
             value: ''
         };
     }
@@ -18,7 +17,7 @@ class SearchBar extends Component {
     // 컴포넌트 인스턴스 생성시 this를 자동으로 바인딩 해주지 않기 때문에 constructor 에서 명시적으로 추가 바인딩 해줘야함.
     onInputChange = event => {
         this.setState({value: event.target.value});
-        this.state.searchYoutube(event.target.value);
+        this.props.searchYoutube(event.target.value);
     }
 
     render() {
