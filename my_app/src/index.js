@@ -1,5 +1,5 @@
 // Package Modules
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -22,6 +22,8 @@ class App extends Component {
       selectedVideo: null
     };
 
+
+    this.isLogin = false;
     this.getVideoList(); // 비디오 목록 호출
   }
 
@@ -53,18 +55,31 @@ class App extends Component {
   onVideoSelect = ( selectedVideo ) => {
     this.setState({ selectedVideo });
   }
+  componentDidMount() {
 
+  }
+
+  componentWillMount() {
+
+  }
   /**
    * 랜더 메소드
    * @return {[Object]} [JSX]
    */
   render() {
     return (
-      <div>
-          <VideoDetail video={ this.state.selectedVideo }/>
-          <SearchBar searchYoutube={ this.getVideoList }/>
-          <VideoList videos={ this.state.videos } onVideoSelect={ this.onVideoSelect }/>
-      </div>
+      <Fragment>
+      { this.isLogin ?
+        (
+          <Fragment>
+            <VideoDetail video={ this.state.selectedVideo }/>
+            <SearchBar searchYoutube={ this.getVideoList }/>
+            <VideoList videos={ this.state.videos } onVideoSelect={ this.onVideoSelect }/>
+          </Fragment>
+        )
+          : (<div>Empty Content</div>)
+        }
+      </Fragment>
     )
   }
 }

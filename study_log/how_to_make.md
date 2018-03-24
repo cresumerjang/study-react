@@ -41,3 +41,6 @@ mapDispatchToProps(dispatch){
 dispatch가 액션을 리듀서로 뱉어내는 역할
 mapDispatchToProps가 반환하는 값이 컨테이너의 props에 할당되게 하는 역할
 그래서 this.props.key로 함수 호출하면 액션에 dispatch되고 리듀서가 이를 받아 store를 업데이트하고 라이프사이클에 의해 컴포넌트가 리랜더링된다.
+
+섹션을 나누고 컴포넌트를 쪼갠다
+쪼갠컴포넌트중 어떤걸 컨테이너롤 사용할지 정한다.
