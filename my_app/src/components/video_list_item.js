@@ -23,7 +23,7 @@ class VideoItem extends Component {
   render() {
     return (
       <li>
-        <img onClick={() => this.state.onVideoSelect(this.state.video)} src={ this.state.thumbnail }/>
+        <img onClick={() => this.state.onVideoSelect(this.state.video)} src={ this.state.thumbnail } alt=""/>
         <strong>{ this.state.title }</strong>
         <p>{ this.state.description }</p>
       </li>

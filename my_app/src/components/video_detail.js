@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const VideoDetail = ({ video }) => {
     if( !video ){
@@ -10,7 +10,7 @@ const VideoDetail = ({ video }) => {
     return (
         <div>
             <h1>React Axios Test</h1>
-        <iframe width="700px" height="500px" src={ url }/>
+        <iframe title={video.snippet.etag} width="700px" height="500px" src={ url }/>
         <p><strong>{ video.snippet.title }</strong></p>
         <p>{ video.snippet.description }</p>
         </div>
