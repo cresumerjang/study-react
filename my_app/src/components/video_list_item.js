@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import axios from 'axios';
 
 class VideoItem extends Component {
   constructor( props ) {

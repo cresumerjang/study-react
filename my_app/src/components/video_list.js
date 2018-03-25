@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import VideoItem from './video_list_item';
 import _ from 'lodash';
 import axios from 'axios';
@@ -27,7 +27,8 @@ class VideoList extends Component {
   getVideoList = _.debounce(( searchKeyword = '보기만 해도 힐링되는 하이텐션 사나' ) => {
     const YOUTUBE_API_KEY = 'AIzaSyBeF5pvvqj0ekkeMPXgnJAfmC7bZWhiCOE';
     const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/search';
-const that = this;
+    const that = this;
+
     axios.get(YOUTUBE_API, {
         params: {
             q: searchKeyword,
@@ -54,7 +55,7 @@ const that = this;
                />
              );
            })
-          : (<div>asdf</div>)
+          : (<div>로딩중</div>)
         }
       </ul>
     );

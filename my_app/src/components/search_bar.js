@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { initList } from '../actions/index';
+import _ from 'lodash';
+import axios from 'axios';
 
 // const SearchBar = () => {
 //     return <input />
@@ -17,8 +22,26 @@ class SearchBar extends Component {
     // 컴포넌트 인스턴스 생성시 this를 자동으로 바인딩 해주지 않기 때문에 constructor 에서 명시적으로 추가 바인딩 해줘야함.
     onInputChange = event => {
         this.setState({value: event.target.value});
-        this.props.searchYoutube(event.target.value);
+        this.getVideoList(event.target.value);
     }
+
+    getVideoList = _.debounce(( searchKeyword = '보기만 해도 힐링되는 하이텐션 사나' ) => {
+      const YOUTUBE_API_KEY = 'AIzaSyBeF5pvvqj0ekkeMPXgnJAfmC7bZWhiCOE';
+      const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/search';
+      const that = this;
+
+      axios.get(YOUTUBE_API, {
+          params: {
+              q: searchKeyword,
+              part: 'snippet',
+              key: YOUTUBE_API_KEY
+          }
+      })
+      .then((res) => {
+        // this.setState({ videos: res.data.items });
+        that.props.initList(res.data.items);
+      });
+    }, 300)
 
     render() {
         return (
@@ -36,7 +59,18 @@ class SearchBar extends Component {
     }
 }
 
-export default SearchBar;
+// function mapStateToProps(state) {
+//   return {
+//     videos: state.videos
+//   };
+// }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({initList: initList}, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
+// export default SearchBar;
 
 
 
