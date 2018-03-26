@@ -1,18 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const VideoDetail = ({ video }) => {
-    if( !video ){
+const VideoDetail = ({ playVideo }) => {
+    if( !playVideo ){
       return <div>목록에서 비디오를 선택하세요.</div>;
     }
 
-    const url = `https://www.youtube.com/embed/${ video.id.videoId }`;
+    const url = `https://www.youtube.com/embed/${ playVideo.id.videoId }`;
 
     return (
         <div>
             <h1>React Axios Test</h1>
-        <iframe title={video.snippet.etag} width="700px" height="500px" src={ url }/>
-        <p><strong>{ video.snippet.title }</strong></p>
-        <p>{ video.snippet.description }</p>
+        <iframe title={playVideo.snippet.etag} width="700px" height="500px" src={ url }/>
+        <p><strong>{ playVideo.snippet.title }</strong></p>
+        <p>{ playVideo.snippet.description }</p>
         </div>
     );
 };
@@ -50,4 +51,11 @@ const VideoDetail = ({ video }) => {
 // componentDidMount = () => {
 //     window.scrollTo(0, 0);
 // }
-export default VideoDetail;
+// export default VideoDetail;
+function mapStateToProps(state) {
+    console.log('##############',state);
+    return {
+        playVideo: state.playVideo
+    }
+}
+export default connect(mapStateToProps)(VideoDetail);
