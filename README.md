@@ -38,10 +38,11 @@ npm run start
 
 
 ## Considerations
-- __redux를 통한 상태(props, state) 관리__
-    - redux의 action정의
-    - 구조화된 reducer 설계
-- __재사용 단위 고려한 component 작성__
+- __Model__(redux를 통한 상태 관리)
+    - ![](./markdown_public/images/cycle.png)
+    - action 생성 및 모듈 관리 rule
+    - reducer 생성 및 모듈 관리 rule
+- __View__(재사용 단위 고려한 container/component 작성)
     - component 재사용 고려 범위를 page definition에 근거한 region 단위로 제한.
     - region을 벗어나면 동일 UI일 지라도 component를 재작성하여 리즌 단위로 폴더 구성하여 관리.
     - scss 파일도 컴포넌트와 동일한 계층으로 구성하고 관리.
