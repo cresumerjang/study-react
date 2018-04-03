@@ -1,8 +1,9 @@
 // Package Modules
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxPromise from 'redux-promise';
 // import _ from 'lodash';
 // import axios from 'axios';
 // UI Components
@@ -15,7 +16,8 @@ import VideoList from './components/video_list';
 // Reducers
 import ReducersEntry from './reducers/index';
 
-let store = createStore(ReducersEntry);
+// let store = createStore(ReducersEntry);
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 class App extends Component {
   // constructor(props) {
@@ -126,7 +128,7 @@ class App extends Component {
    */
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={createStoreWithMiddleware(ReducersEntry)}>
         <Fragment>
           <div>count : {this.state.number}</div>
           <button onClick={this.countUp}>+</button>

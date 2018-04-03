@@ -38,11 +38,11 @@ npm run start
 
 
 ## Considerations
-- __Model__(redux를 통한 상태 관리)
+- __Model__ (redux를 통한 상태 관리)
     - ![](./markdown_public/images/cycle.png)
     - action 생성 및 모듈 관리 rule
     - reducer 생성 및 모듈 관리 rule
-- __View__(재사용 단위 고려한 container/component 작성)
+- __View__ (재사용 단위 고려한 container/component 작성)
     - component 재사용 고려 범위를 page definition에 근거한 region 단위로 제한.
     - region을 벗어나면 동일 UI일 지라도 component를 재작성하여 리즌 단위로 폴더 구성하여 관리.
     - scss 파일도 컴포넌트와 동일한 계층으로 구성하고 관리.
@@ -62,9 +62,12 @@ npm run start
 - https://jae-kwang.github.io/blog/2018/02/04/project-react/
 - https://www.ridicorp.com/blog/2017/09/13/how-to-develop-ridistory-front/
 
-#### 리액트 학습 참
+#### 리액트 학습 참고
 - https://deminoth.github.io/redux/
 - http://d2.naver.com/helloworld/1848131
 - https://github.com/reactjs/redux
 - [Youtube - React.js 강좌 시리즈](https://www.youtube.com/playlist?list=PL9FpF_z-xR_GMujql3S_XGV2SpdfDBkeC)
 - [모던 자바스크립트 개발자를 위한 리액트 프로그래밍](https://www.youtube.com/playlist?list=PLBXuLgInP-5lJA_ZDXp8rlDwH2ZMNX-qG)
+- [리액트 기초 웹 서비스 만들기 React JS Fundamentals](https://www.youtube.com/playlist?list=PL7jH19IHhOLOFTVD4R8FeZWkwpVi8-9Fv)
+- [리액트, 리덕스로 타이머 앱 만들기 Build timer app with React Native and Redux](https://www.youtube.com/playlist?list=PL7jH19IHhOLMKhZfOg7fj6gFX7Lbxpk7q)
+- [모던 리액트(React)와 리덕스(Redux)](https://www.udemy.com/react-redux-korean/learn/v4/content)

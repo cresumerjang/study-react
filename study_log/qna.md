@@ -18,6 +18,32 @@ ex) 관심상품 클릭시 액션 생성자에서 로그인 여부 체크(isLogi
 - 번들시 엔트리 파일을 지정하는데 엔트리파일과 참조가 없는 파일은 번들링 대상이 아닌가?
 > 대기
 
+- 애니메이션 처리는 어떻게 하나? ref 사용해서 props.refs로 참조하여 컨트롤하나?
+> ref로 직접 dom컨트롤 하고 완료 후 setState로 상태 맞춰주는 방법이 있고,<br>
+컴포넌트 내부에 상태값을 가지고 변경을 통해 리랜더링하여 스스로 클래스를 바꿔 애니메이션을 처리하고 props로 부모컴포넌트에서 받은 함수로 부모가 가진 상태 리스트에 해당 아이템을 지우도록 가능(근데 애니메이션 완료 시점 이벤트 캐치해서 부모 props로 받은 함수 호출해 줘야 하나?)
+
+```js
+child {
+  state = {
+     remove: false
+  }
+
+  handleRemove() {
+    remove -> true
+    0.3 뒤 this.props.onRemove()
+  }
+
+  render() {
+    remove === true 일때 어떤 스타일 apply
+  }
+}
+```
+
+
+
+- 이미지 슬라이더 같은 외부 라이브러리는 그냥 받아서 import 후 didMount 이후에 인스턴스 만들어서 쓰면 되나? 경우에 따라 매번 인스턴스 만들지 않게 처리하고
+> import 해서 라이프사이클 맞춰서 사용하면 됨 didMount는 돔 제거되지 않는이상 한번만 발생 shouldComponentUpdate(가상돔랜더조차 막아줌)인가 그거 false하면 아예 랜터 루틴 타지 않음
+
 ### Note
 - JSX 주석
 > <!-- --> 안됨 { /\* \*/},
@@ -84,3 +110,13 @@ render() {
 없는 데이터 참조시 에러 발생하게 하는 라이프사이클 메소드 활용 componentDidCatch(error, info)
 
 - es6  newObject = {...baseObject, key:val }로 참조 끊을 수 잇는 듯
+
+- 크롬 dev tool에서 highlight update로 업데이트 되는거 볼 수 있음(실제 돔이 업데이트 되는건 아니라고함?) shouldComponentUpdate에 state, props의 값으로 상태 체크하여 랜더 낭비를 막아서 업데이트 되는 색 줄어든거 볼 수 있음
+
+- style
+  - css moudle 해시값 붙여서 depth 잡지 않더라도 항상 unique하게 유지시켜 줌
+  - styled components 자바스크립트로 스크립트 사
+
+- classNames 모듈 사용
+
+-
