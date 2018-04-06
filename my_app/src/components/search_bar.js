@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { initList } from '../actions/index';
+import { reducer as formReducer } from 'redux-form';
 import _ from 'lodash';
 import axios from 'axios';
 
@@ -71,34 +72,3 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(null, mapDispatchToProps)(SearchBar);
 // export default SearchBar;
-
-
-
-// class VideoDetail extends Component {
-//   constructor( props ) {
-//     if( !props ){
-//       return <div>목록에서 비디오를 선택하세요.</div>;
-//     }
-//     super( props );
-//
-//     this.state = {
-//       title: props.video.snippet.title,
-//       description: props.video.snippet.description,
-//       url: `https://www.youtube.com/embed/${ props.video.id.videoId }`
-//     };
-//   }
-//
-//   componentDidMount = () => {
-//       window.scrollTo(0, 0);
-//   }
-//
-//   render() {
-//     return (
-//         <div>
-//         <iframe src={ this.state.url }/>
-//         <p><strong>{ this.state.title }</strong></p>
-//         <p>{ this.state.description }</p>
-//         </div>
-//     );
-//   }
-// }

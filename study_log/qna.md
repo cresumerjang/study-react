@@ -42,7 +42,7 @@ child {
 
 
 - 이미지 슬라이더 같은 외부 라이브러리는 그냥 받아서 import 후 didMount 이후에 인스턴스 만들어서 쓰면 되나? 경우에 따라 매번 인스턴스 만들지 않게 처리하고
-> import 해서 라이프사이클 맞춰서 사용하면 됨 didMount는 돔 제거되지 않는이상 한번만 발생 shouldComponentUpdate(가상돔랜더조차 막아줌)인가 그거 false하면 아예 랜터 루틴 타지 않음
+> import 해서 라이프사이클 맞춰서 사용하면 됨 didMount는 돔 제거되지 않는이상 한번만 발생 shouldComponentUpdate인가 그거 false하면 아예 랜터 루틴 타지 않음
 
 ### Note
 - JSX 주석
@@ -110,13 +110,3 @@ render() {
 없는 데이터 참조시 에러 발생하게 하는 라이프사이클 메소드 활용 componentDidCatch(error, info)
 
 - es6  newObject = {...baseObject, key:val }로 참조 끊을 수 잇는 듯
-
-- 크롬 dev tool에서 highlight update로 업데이트 되는거 볼 수 있음(실제 돔이 업데이트 되는건 아니라고함?) shouldComponentUpdate에 state, props의 값으로 상태 체크하여 랜더 낭비를 막아서 업데이트 되는 색 줄어든거 볼 수 있음
-
-- style
-  - css moudle 해시값 붙여서 depth 잡지 않더라도 항상 unique하게 유지시켜 줌
-  - styled components 자바스크립트로 스크립트 사
-
-- classNames 모듈 사용
-
--

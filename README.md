@@ -72,3 +72,4 @@ npm run start
 - [리액트 기초 웹 서비스 만들기 React JS Fundamentals](https://www.youtube.com/playlist?list=PL7jH19IHhOLOFTVD4R8FeZWkwpVi8-9Fv)
 - [리액트, 리덕스로 타이머 앱 만들기 Build timer app with React Native and Redux](https://www.youtube.com/playlist?list=PL7jH19IHhOLMKhZfOg7fj6gFX7Lbxpk7q)
 - [모던 리액트(React)와 리덕스(Redux)](https://www.udemy.com/react-redux-korean/learn/v4/content)
+- [Code Splitting in Create React App](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
