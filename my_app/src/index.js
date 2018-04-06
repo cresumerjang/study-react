@@ -96,7 +96,7 @@ class App extends Component {
    */
   render() {
     return (
-      <Provider store={createStoreWithMiddleware(ReducersEntry)}>
+      <Provider store={store}>
         <Fragment>
           <div>count : {this.state.number}</div>
           <button onClick={this.countUp}>+</button>
