@@ -96,6 +96,7 @@ common/
 search/
 // 카테고리 리스트
 category/
+    common/
     filter/
     // 배너 컴포넌트 (용도별 폴더로 구분)
     banner/
