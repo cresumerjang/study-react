@@ -84,3 +84,4 @@ render() {
 없는 데이터 참조시 에러 발생하게 하는 라이프사이클 메소드 활용 componentDidCatch(error, info)
 
 - es6  newObject = {...baseObject, key:val }로 참조 끊을 수 잇는 듯
+- 리액트 컴포넌트는 오직 데이트를 보여주는 권한만 있다. 테이터를 가져오고 갱신하는건 리덕스(액션과 리듀스)가 담당한다.

@@ -62,9 +62,10 @@ npm run start
 - https://jae-kwang.github.io/blog/2018/02/04/project-react/
 - https://www.ridicorp.com/blog/2017/09/13/how-to-develop-ridistory-front/
 
-#### 리액트 학습 참
+#### 리액트 학습 참고
 - https://deminoth.github.io/redux/
 - http://d2.naver.com/helloworld/1848131
 - https://github.com/reactjs/redux
 - [Youtube - React.js 강좌 시리즈](https://www.youtube.com/playlist?list=PL9FpF_z-xR_GMujql3S_XGV2SpdfDBkeC)
 - [모던 자바스크립트 개발자를 위한 리액트 프로그래밍](https://www.youtube.com/playlist?list=PLBXuLgInP-5lJA_ZDXp8rlDwH2ZMNX-qG)
+- [Code Splitting in Create React App](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)

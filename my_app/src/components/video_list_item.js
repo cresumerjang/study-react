@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
-import axios from 'axios';
+// import _ from 'lodash';
+// import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { playVideo } from '../actions/index';
