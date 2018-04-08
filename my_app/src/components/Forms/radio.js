@@ -7,14 +7,17 @@ class RadioButton extends Component {
     super();
 
     this.state = {
-      value: props.value
+      items: props.formItems,
+      value: props.formItems[0].value
     }
   }
 
   onChange = (e) => {
-    this.setState(produce(draftState => {
-      draftState.value = !this.state.value
-    } ));
+    const currentValue = e.target.value;
+
+    this.setState( produce( draftState => {
+      draftState.value = currentValue;
+    }));
   }
 
   checkedStyle = {
@@ -22,25 +25,34 @@ class RadioButton extends Component {
   }
 
   render(){
-    return (
-      <Fragment>
+    const radioItems = this.state.items.map( radio => {
+      return (
+        <Fragment>
           <input
             type="radio"
-            id={this.props.formId}
-            name={this.props.name}
-            checked={this.state.value}
-            value={this.state.value}
-            title={this.props.title}
+            id={radio.formId}
+            name={radio.name}
+            checked={radio.value === this.state.value}
+            value={radio.formId}
+            title={radio.title}
+            onChange={this.onChange}
           />
 
-          <label htmlFor={this.props.formId}>
-            <span>{this.props.label}</span>
+          <label htmlFor={radio.formId}>
+            <span>{radio.label}</span>
             {
-              this.state.value
+              radio.value === this.state.value
               ? <span style={this.checkedStyle}>[선택]</span>
               : <span>[해제]</span>
             }
           </label>
+      </Fragment>
+      );
+    });
+
+    return (
+      <Fragment>
+          {radioItems}
       </Fragment>
     )
   }
