@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 // import _ from 'lodash';
 // import axios from 'axios';
 import { connect } from 'react-redux';
+import { findDOMNode } from 'react-dom';
 import { bindActionCreators } from 'redux';
 import { playVideo } from '../actions/index';
+import $ from 'jquery';
 
 class VideoItem extends Component {
   constructor( props ) {
@@ -19,6 +21,8 @@ class VideoItem extends Component {
       thumbnail: props.video.snippet.thumbnails.high.url,
       onVideoSelect: props.onVideoSelect
     }
+
+    this.refDom = {};
   }
 
   makeVideoUrl = ( video ) => {
@@ -27,15 +31,23 @@ class VideoItem extends Component {
 
   selectVideo = (  ) => {
       this.props.playVideo(this.state.video);
+      window.scrollTo(0,0);
   }
 
+  update = (e) => {
+    console.log(this.item);
+    $(this.refDom.item).find('.description').slideUp();
+  }
+  show = () => {
+    $(this.refDom.item).find('.description').slideDown();
+  }
   render() {
     return (
-      <li>
+      <li ref={el => this.refDom.item = el}>
         {/*<img onClick={() => this.state.onVideoSelect(this.state.video)} src={ this.state.thumbnail } alt=""/>*/}
         <img onClick={this.selectVideo} src={ this.state.thumbnail } alt=""/>
-        <strong>{ this.state.title }</strong>
-        <p>{ this.state.description }</p>
+        <strong onClick={this.show}>{ this.state.title }</strong>
+        <p className="description" onClick={this.update}>{ this.state.description }</p>
       </li>
     );
   }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { initList } from '../actions/index';
 import { reducer as formReducer } from 'redux-form';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import axios from 'axios';
 
@@ -14,7 +15,6 @@ class SearchBar extends Component {
         super(searchYoutube);
 
         this.state = {
-            placeholder: '키워드를 입력해 주세요dd.',
             value: ''
         };
     }
@@ -50,7 +50,7 @@ class SearchBar extends Component {
             // siblings 노드는 허용되지 않으며 필요시 child 노드가 추가되어야 한다.
             <div>
                 <input
-                    placeholder={this.state.placeholder}
+                    placeholder={this.props.placeholder}
                     onChange={this.onInputChange}
                     value={this.state.value}
                 />
@@ -59,6 +59,14 @@ class SearchBar extends Component {
         )
     }
 }
+
+SearchBar.defaultProps = {
+  placeholder: '키워드를 입력해 주세요.'
+}
+//
+// SearchBar.propTypes = {
+//   placeholder: PropTypes.number.isRequired
+// }
 
 // function mapStateToProps(state) {
 //   return {
