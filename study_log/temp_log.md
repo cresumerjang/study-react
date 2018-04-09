@@ -271,3 +271,8 @@ componentDidMount()
   render()
   componentDidUpdate()
 componentWillUnmount()
+
+
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks#vscode
+https://medium.com/@auchenberg/live-edit-and-debug-your-react-apps-directly-from-vs-code-without-leaving-the-editor-3da489ed905f
+https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
