@@ -259,3 +259,15 @@ Comp.propTypes
 로 프리젠테이션 컴포넌트의 읽기전용 상태를 관리할 수 있지만
 상태로 관리해야하는 부분이 있으면 state의 초기값으로 state를 할당하고
 이후는 state통해 관리하는게 맞나?
+
+constructor()
+componentWillMount()
+render()
+componentDidMount()
+컴포넌트사용
+  componentWillReceiveProps(nextProps)
+  shouldComponentUpdate(nextProps, nextState)
+  componentWillUpdate()
+  render()
+  componentDidUpdate()
+componentWillUnmount()

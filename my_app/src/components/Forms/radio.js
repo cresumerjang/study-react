@@ -2,22 +2,26 @@ import React, { Component, Fragment } from 'react';
 import produce from "immer";
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import axios from 'axios';
+import { radioButton } from '../../actions/index';
+
 class RadioButton extends Component {
   constructor(props){
     super();
 
     this.state = {
-      items: props.formItems,
-      value: props.formItems[0].value
+      activeValue: props.item.checked
     }
   }
 
   onChange = (e) => {
     const currentValue = e.target.value;
-
-    this.setState( produce( draftState => {
-      draftState.value = currentValue;
-    }));
+    // this.setState( produce( draftState => {
+    //   draftState.activeValue = currentValue;
+    // }));
+    this.props.radioButton(this.state.activeValue);
   }
 
   checkedStyle = {
@@ -25,34 +29,25 @@ class RadioButton extends Component {
   }
 
   render(){
-    const radioItems = this.state.items.map( radio => {
-      return (
-        <Fragment>
-          <input
-            type="radio"
-            id={radio.formId}
-            name={radio.name}
-            checked={radio.value === this.state.value}
-            value={radio.formId}
-            title={radio.title}
-            onChange={this.onChange}
-          />
-
-          <label htmlFor={radio.formId}>
-            <span>{radio.label}</span>
-            {
-              radio.value === this.state.value
-              ? <span style={this.checkedStyle}>[선택]</span>
-              : <span>[해제]</span>
-            }
-          </label>
-      </Fragment>
-      );
-    });
-
     return (
       <Fragment>
-          {radioItems}
+        <input
+          type="radio"
+          id={this.props.item.formId}
+          name={this.props.item.name}
+          value={this.props.item.value}
+          checked={this.props.activeValue}
+          onChange={this.onChange}
+        />
+
+        <label htmlFor={this.props.item.formId}>
+          <span>{this.props.item.label}</span>
+          {
+            (this.props.activeValue)
+            ? <span style={this.checkedStyle}>[선택]</span>
+            : <span>[해제]</span>
+          }
+        </label>
       </Fragment>
     )
   }
@@ -65,5 +60,15 @@ class RadioButton extends Component {
 // RadioButton.propTypes = {
 //   key: PropTypes.string.isRequired
 // }
+function mapStateToProps(state) {
+  return {
+    activeValue: state.activeValue
+  };
+}
 
-export default RadioButton;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({radioButton: radioButton}, dispatch);
+}
+
+// export default RadioButton;
+export default connect(mapStateToProps, mapDispatchToProps)(RadioButton);

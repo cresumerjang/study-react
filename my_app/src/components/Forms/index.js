@@ -16,8 +16,13 @@ class Forms extends Component {
         //   <label htmlFor="1">상품옵션</label>
         </Checkbox>
         <Checkbox name="상품옵션2" formId="2" value={false} label="사이즈"/>
-        <RadioButton formItems={this.props.radio}/>
-
+        {
+          this.props.radio.map( item => {
+            return (
+              <RadioButton item={item}/>
+            )
+          })
+        }
       </form>
     )
   }
@@ -29,13 +34,15 @@ Forms.defaultProps = {
         name: 'sex',
         formId: 'male',
         value: 'male',
-        label: '남자'
+        label: '남자',
+        checked: true
       },
       {
         name: 'sex',
         formId: 'female',
         value: 'female',
-        label: '여자'
+        label: '여자',
+        checked: false
       }
     ]
 };
