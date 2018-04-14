@@ -22,6 +22,10 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
 const createStoreWithMiddleware = applyMiddleware(logger, ReduxThunk)(createStore);
 const store = createStoreWithMiddleware(ReducersEntry, devTools);
 
+// TODO: 리액트 투두 테스트
+/**
+ * FIXME:
+ */
 class App extends Component {
   constructor(props) {
     super(props);
