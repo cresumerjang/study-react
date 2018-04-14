@@ -18,8 +18,9 @@ import Forms from './components/Forms';
 import ReducersEntry from './reducers/index';
 
 const logger = createLogger({/* timestamp: true, diff:true */});
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const createStoreWithMiddleware = applyMiddleware(logger, ReduxThunk)(createStore);
-const store = createStoreWithMiddleware(ReducersEntry);
+const store = createStoreWithMiddleware(ReducersEntry, devTools);
 
 class App extends Component {
   constructor(props) {
