@@ -281,3 +281,9 @@ https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 dom은 dom메소드 사용하고 애니메이션은 css3로 하면 jquery 안쓸 수 있을 것 같은데...
 아래 리액트에서 애니메이션 처리 사례 확인 후 검토
 https://medium.com/@joethedave/achieving-ui-animations-with-react-the-right-way-562fa8a91935
+
+https://validatejs.org/
+https://github.com/vlpt-playground?tab=repositories
+https://github.com/mweststrate/immer
+https://redux-form.com/6.0.0-alpha.6/examples/simple/
+https://github.com/facebook/prop-types
