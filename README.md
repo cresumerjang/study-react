@@ -56,12 +56,14 @@ npm run start
     - redux-devtools (리듀서 에러 핸들링을 위한 액션 로거)
     - reselect (효율적인 데이터 셀렉터)
     - lodash
+    - [storybook](https://github.com/storybooks/storybook)
 
 ## Reference
 #### 적용 사례 & 후기
 - http://huns.me/development/1953
 - https://jae-kwang.github.io/blog/2018/02/04/project-react/
 - https://www.ridicorp.com/blog/2017/09/13/how-to-develop-ridistory-front/
+- [구버전 지원을 위한 이슈, 처리방법 가이드](http://seoul.reactjs.kr/assets/slides/embedded_react_application.pdf)
 
 #### 리액트 학습 참고
 - https://deminoth.github.io/redux/

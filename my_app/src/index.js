@@ -13,6 +13,7 @@ import ReduxThunk from 'redux-thunk';
 import SearchBar from './components/search_bar';
 import VideoDetail from './components/video_detail';
 import VideoList from './components/video_list';
+import Forms from './components/Forms';
 
 // Reducers
 import ReducersEntry from './reducers/index';
@@ -98,6 +99,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Fragment>
+          <Forms/>
           <div>count : {this.state.number}</div>
           <button onClick={this.countUp}>+</button>
           <button onClick={this.countDown}>-</button>

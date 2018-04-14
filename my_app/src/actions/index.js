@@ -28,3 +28,12 @@ export function playVideo( newAction ) {
     payload: newAction
   };
 }
+
+export const SELECT_RADIO = 'SELECT_RADIO';
+
+export function radioButton( newAction ) {
+  return {
+    type: SELECT_RADIO,
+    payload: newAction
+  }
+}
