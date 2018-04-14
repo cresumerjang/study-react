@@ -273,6 +273,7 @@ componentDidMount()
 componentWillUnmount()
 
 
+
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#vscode
 https://medium.com/@auchenberg/live-edit-and-debug-your-react-apps-directly-from-vs-code-without-leaving-the-editor-3da489ed905f
 https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
@@ -281,9 +282,66 @@ https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 dom은 dom메소드 사용하고 애니메이션은 css3로 하면 jquery 안쓸 수 있을 것 같은데...
 아래 리액트에서 애니메이션 처리 사례 확인 후 검토
 https://medium.com/@joethedave/achieving-ui-animations-with-react-the-right-way-562fa8a91935
-
+gitbook list https://gist.github.com/velopert/8a1071ea03f06d21a98bc38986d24290
+https://reactarmory.com/guides/lifecycle-simulators 라이프사이클 확인
 https://validatejs.org/
 https://github.com/vlpt-playground?tab=repositories
 https://github.com/mweststrate/immer
 https://redux-form.com/6.0.0-alpha.6/examples/simple/
 https://github.com/facebook/prop-types
+https://articles.coltpini.com/react-redux-architecture-overview-7b3e52004b6e
+
+vscode에서 eslint 기본은 루트에 .eslintrc 추가
+yarn eject후는 package.json에 eslintConfig에 컨피그
+HOC 예제코드 https://codesandbox.io/live/OYn6nQ
+https://gist.github.com/velopert/3bdd08cb135587ffc481102c38134f6d
+https://bestalign.github.io/2015/10/26/cartoon-intro-to-redux/
+
+project안에 .env파일 안에 NODE_PATH=src 라고 작성하면
+모듈에서 import시 src부터 경로 써주면됨
+
+액션명 작성시 어떤모듈의 액션인지 namespace개념으로 작성함
+const create = '/WIDJET/CREATE';
+const INCREMENT = '리듀서명/액션명';
+
+```js
+import { createAction, handleActions } from 'redux-actions';
+
+const INCREMENT = 'counter/INCREMENT';
+const DECREMENT = 'counter/DECREMENT';
+
+export const increment = createAction(INCREMENT);
+export const decrement = createAction(DECREMENT);
+
+const initialState = {
+  number: 0
+};
+
+export default handleActions(
+  {
+    [INCREMENT]: state => {
+      return { number: state.number + 1 };
+    },
+    [DECREMENT]: ({ number }) => {
+      return { number: number - 1 };
+    }
+  },
+  initialState
+);
+
+```
+duck patter사용해서 액션과 리듀서는 함께 리듀서엔트리에서 컴바인만함 액션은 개별로 존재
+
+스토어를 만드는 configure.js 고려?
+```js
+import { createStore } from 'redux';
+import modules from './modules';
+
+const configure = () => {
+  const store = createStore(modules);
+  return store;
+};
+
+export default configure;
+
+```
