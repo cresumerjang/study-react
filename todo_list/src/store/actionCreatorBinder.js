@@ -1,7 +1,7 @@
-import { bindActionCreators } from 'redux';
-import * as todoActions from '../modules/todoList/actionAndReducer/todo';
-import store from './index';
+// import { bindActionCreators } from 'redux';
+// import * as todoActions from '../modules/todoList/actionAndReducer/todo';
+// import store from './index';
 
-const { dispatch } = store;
+// const { dispatch } = store;
 
-export const TodoActions = bindActionCreators(todoActions, dispatch);
+// export const TodoActions = bindActionCreators(todoActions, dispatch);
