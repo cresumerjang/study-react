@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class AddTodo extends Component {
+  static defaultProps = {
+    placeholder: '할 일을 추가해 주세요.'
+  };
+  
+  static propTypes = {
+    onAddClick: PropTypes.func.isRequired
+  };
+
   render() {
     return (
       <div>
-        <input type='text' ref='input' />
+        <input type='text' ref='input' placeholder={this.props.placeholder}/>
         <button onClick={(e) => this.handleClick(e)}>
           Add
         </button>
@@ -20,7 +28,3 @@ export default class AddTodo extends Component {
     node.value = '';
   }
 }
-
-AddTodo.propTypes = {
-  onAddClick: PropTypes.func.isRequired
-};

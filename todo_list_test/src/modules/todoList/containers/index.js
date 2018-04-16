@@ -9,6 +9,18 @@ import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
 
 class App extends Component {
+  static propTypes = {
+    visibleTodos: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired
+    })),
+    visibilityFilter: PropTypes.oneOf([
+      'SHOW_ALL',
+      'SHOW_COMPLETED',
+      'SHOW_ACTIVE'
+    ]).isRequired
+  };
+  
   render() {
     // connect() 호출을 통해 주입됨:
     const { dispatch, visibleTodos, visibilityFilter } = this.props;
@@ -36,17 +48,6 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  visibleTodos: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired
-  })),
-  visibilityFilter: PropTypes.oneOf([
-    'SHOW_ALL',
-    'SHOW_COMPLETED',
-    'SHOW_ACTIVE'
-  ]).isRequired
-};
 
 function selectTodos(todos, filter) {
   switch (filter) {
