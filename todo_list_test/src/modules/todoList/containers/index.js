@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '../actionAndReducer';
+import { addTodo, completeTodo } from '../actionAndReducer/todos';
+import { setVisibilityFilter, VisibilityFilters } from '../actionAndReducer/filter';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
@@ -62,8 +63,8 @@ function selectTodos(todos, filter) {
 // 노트: 더 나은 성능을 위해서는 https://github.com/faassen/reselect 를 사용하세요
 function select(state) {
   return {
-    visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-    visibilityFilter: state.visibilityFilter
+    visibleTodos: selectTodos(state.todos, state.todosFilter),
+    visibilityFilter: state.todosFilter
   };
 }
 

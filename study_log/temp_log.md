@@ -345,3 +345,20 @@ const configure = () => {
 export default configure;
 
 ```
+
+// TODO:
+import한 액션을 dispatch 메소드 사용해서 바로 사용가능한데 왜 
+dispatch(completeTodo(index))
+액션을 connect 통해서 props에 바인딩해서 사용하지
+this.props.completeTodo(index)
+
+
+handleAction 으로 리듀서 사용하는법 확인
+immer 사용법
+portal 사용법
+life cycle 메소드 숙지
+propTypes 숙지
+비동기 처리 상태 필수 구현 rule setup
+
+마크업 작업환경 확인 -> 저장소 생성
+
