@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '../action';
+import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '../actionAndReducer';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
@@ -14,17 +15,20 @@ class App extends Component {
       <div>
         <AddTodo
           onAddClick={text =>
-            dispatch(addTodo(text))
+            // dispatch(addTodo(text))
+            this.props.addTodo(text)
           } />
         <TodoList
           todos={visibleTodos}
           onTodoClick={index =>
-            dispatch(completeTodo(index))
+            // dispatch(completeTodo(index))
+            this.props.completeTodo(index)
           } />
         <Footer
           filter={visibilityFilter}
           onFilterChange={nextFilter =>
-            dispatch(setVisibilityFilter(nextFilter))
+            // dispatch(setVisibilityFilter(nextFilter))
+            this.props.setVisibilityFilter(nextFilter)
           } />
       </div>
     );
@@ -63,5 +67,13 @@ function select(state) {
   };
 }
 
+const matDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addTodo : addTodo,
+    completeTodo : completeTodo,
+    setVisibilityFilter : setVisibilityFilter
+  }, dispatch);
+}
+
 // 디스패치와 상태를 주입하려는 컴포넌트를 감싸줍니다.
-export default connect(select)(App);
+export default connect(select, matDispatchToProps)(App);
