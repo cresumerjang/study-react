@@ -362,3 +362,5 @@ propTypes 숙지
 
 마크업 작업환경 확인 -> 저장소 생성
 
+https://velopert.com/3358
+https://redux-actions.js.org/docs/api/handleAction.html

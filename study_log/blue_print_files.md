@@ -10,6 +10,7 @@
     - life cycle 메소드
     - propTypes
     - 비동기 처리 상태 필수 구현 rule setup
+    - thunk, promise 처리 로직 확인
     
 ## Directory Structure
 
