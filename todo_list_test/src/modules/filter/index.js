@@ -22,6 +22,10 @@ class FilterCreator extends Component {
 
     }
 
+    updateValue = (event) => {
+        console.log(this.input.value);
+    }
+
     render(){
 
         return (
@@ -32,7 +36,7 @@ class FilterCreator extends Component {
                       this.props.data.filterItems.map( item => {
                           return (
                               <li>
-                                  <input type={item.type} id={item.name} checked={item.status} alt={item.altText} />
+                                  <input onChange={this.updateValue} ref={(input) => this.input = input} type={item.type} id={item.name} checked={item.status} alt={item.altText} />
                                   <label id={item.name} htmlFor={item.name}>{item.name}</label>
                               </li>
                           )
