@@ -1,0 +1,35 @@
+{
+  "name": "begin-redux-basic-template",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/new",
+  "main": "src/index.js",
+  "dependencies": {
+    "immutable": "3.8.2",
+    "mobx": "4.2.0",
+    "mobx-react": "5.0.0",
+    "mobx-react-devtools": "5.0.1",
+    "react": "16.3.1",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.7",
+    "react-scripts": "1.1.0",
+    "redux": "3.7.2",
+    "redux-actions": "2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      "babel-plugin-transform-decorators-legacy"
+    ]
+  }
+}

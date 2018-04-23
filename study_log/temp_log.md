@@ -362,3 +362,21 @@ propTypes 숙지
 
 마크업 작업환경 확인 -> 저장소 생성
 
+https://velopert.com/3358
+https://redux-actions.js.org/docs/api/handleAction.html
+
+HOC
+https://gist.github.com/velopert/3bdd08cb135587ffc481102c38134f6d
+facebook개발자가 만든 HOC라이브러리
+https://github.com/acdlite/recompose
+https://github.com/acdlite/recompose/blob/master/docs/API.md 
+
+Render Prop
+
+HOC와 Render Prop 비교하여 적절히 사용
+
+mobx @observer로 옵저버할 대상으로 지정하고 @observerable붙여서 옵저버할 대상의 감시할 대상으로 지정
+@observerable 값 갱신시 @observer 컴포넌트 업데이트됨, @action도 그냥 함수로서 호출하면 @observer안에서 알아서 처리함
+mobx-react
+mobx
+mobx-react-devtools
