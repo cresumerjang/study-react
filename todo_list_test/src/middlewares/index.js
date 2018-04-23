@@ -1,4 +1,3 @@
-
 import { createLogger } from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
 import ReduxPromise from 'redux-promise';

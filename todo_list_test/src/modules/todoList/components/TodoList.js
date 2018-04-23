@@ -3,6 +3,21 @@ import PropTypes from 'prop-types';
 import Todo from './Todo';
 
 export default class TodoList extends Component {
+  constructor(props){
+    super(props)
+
+  }
+    static defaultProps = {
+        todos: [
+            {text: '하하', completed: true},
+            {text: '하하vasd하', completed: true}
+        ]
+    };
+
+  componentDidMount(){
+
+  }
+
   static propTypes = {
     onTodoClick: PropTypes.func.isRequired,
     todos: PropTypes.arrayOf(PropTypes.shape({
@@ -12,6 +27,7 @@ export default class TodoList extends Component {
   };
   
   render() {
+    console.log('3333', this.props.todos)
     return (
       <ul>
         {this.props.todos.map((todo, index) =>

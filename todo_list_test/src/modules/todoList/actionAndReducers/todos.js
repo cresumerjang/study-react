@@ -39,7 +39,9 @@ export const completeTodo = createAction(COMPLETE_TODO, index => {
 //       return state;
 //     }
 //   }
-  
+const defaultState = [
+    {text: '입력된 할 일', completed: true}
+];
 
 export default handleActions({
   [ADD_TODO]: (state, action) => {
@@ -57,7 +59,7 @@ export default handleActions({
       ...state.slice(action.payload.index + 1)
     ];
   }
-}, []);
+}, defaultState);
   // export function todos(state = [], action) {
   //   switch (action.type) {
   //   case ADD_TODO:

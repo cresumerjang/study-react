@@ -9,6 +9,8 @@ import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
 
 class App extends Component {
+
+
   static propTypes = {
     visibleTodos: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,
@@ -20,7 +22,7 @@ class App extends Component {
       'SHOW_ACTIVE'
     ]).isRequired
   };
-  
+
   render() {
     // connect() 호출을 통해 주입됨:
     const { dispatch, visibleTodos, visibilityFilter } = this.props;
