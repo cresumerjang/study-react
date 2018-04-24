@@ -14,7 +14,10 @@ export default class TodoList extends Component {
         ]
     };
 
-  componentDidMount(){
+  componentDidMount(params){
+    if(!params){
+      return;
+    }
 
   }
 
