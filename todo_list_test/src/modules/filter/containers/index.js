@@ -36,7 +36,12 @@ class FilterCreator extends Component {
     }
 
     render(){
-
+        const hideListStyle = {
+            transition:'all 1s ease',
+            height:'0',
+            overflow:'hidden'
+            // display: 'none'
+        }
         return (
               <Fragment>
                     {this.props.filterList.map((filter, idx)=>{
@@ -44,18 +49,13 @@ class FilterCreator extends Component {
                             <div className="testClass" ref={this.filterBox}>
                                 <Title data={filter}/>                                
                                 <ButtonToggleFilterList toggleFilter={this.toggleFilterList} idx={idx}/>
-                                {
-                                    filter.isActive
-                                    ?
-                                    <ul ref={(filterList) => this.filterList = filterList}>
+                                <ul ref={(filterList) => this.filterList = filterList} style={!filter.isActive ? hideListStyle : null}>
                                     {
                                         filter.filterItems.map( item => {
                                             return (<FilterItem data={item}/>)
                                         })
                                     }
-                                    </ul>
-                                    : null
-                                }
+                                </ul>
                                 <ButtonSpreadFilterList/>
                                 <hr/>
                             </div>
