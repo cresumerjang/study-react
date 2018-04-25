@@ -68,7 +68,7 @@ class FilterCreator extends Component {
 
 const mapStateToProps = state => {
     console.log('====================================');
-    console.log(state);
+    console.dir(state);
     console.log('====================================');
     return {
         filterList: state.filterList

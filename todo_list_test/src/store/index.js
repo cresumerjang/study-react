@@ -1,19 +1,21 @@
 // redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 // middleware
-import { logger, devTools, ReduxPromise, ReduxThunk } from '../middlewares';
+import { logger, composeEnhancers, ReduxPromise, ReduxThunk } from '../middlewares';
 // module's reducer
 import todosFilter from '../modules/todoList/actionAndReducers/filter';
 import todos from '../modules/todoList/actionAndReducers/todos';
 import filterList from '../modules/filter/actionAndReducers/filter';
 
-const initialState = {}; // filterList:'ASFA' 
+const initialState = {todosFilter:'테스트', newReducer:'테스트'}; // filterList:'ASFA' 
 
-const createStoreWithMiddleware = applyMiddleware(logger, ReduxThunk, ReduxPromise)(createStore);
-const store = createStoreWithMiddleware(combineReducers({
+const combinedReducers = combineReducers({
   todosFilter,
   todos,
   filterList
-}), initialState, devTools);
+});
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const createStoreWithMiddleware = applyMiddleware(logger, ReduxThunk, ReduxPromise)(createStore);
+const store = createStore(combinedReducers, initialState, composeEnhancers(applyMiddleware(logger, ReduxThunk, ReduxPromise)));
 
 export default store;
