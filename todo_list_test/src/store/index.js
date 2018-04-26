@@ -7,7 +7,9 @@ import todosFilter from '../modules/todoList/actionAndReducers/filter';
 import todos from '../modules/todoList/actionAndReducers/todos';
 import filterList from '../modules/filter/actionAndReducers/filter';
 
-const initialState = {todosFilter:'테스트', newReducer:'테스트'}; // filterList:'ASFA' 
+const initialState = {
+  // filterList:'테스트'
+};
 
 const combinedReducers = combineReducers({
   todosFilter,
