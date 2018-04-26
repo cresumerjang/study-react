@@ -11,9 +11,9 @@ import Modal from '../portals/Modal';
 class Search extends Component {
     constructor(props){
         super(props);
-        console.log(this.props.buttonColor);
+        this.state = {}
         if( !this.state.buttonColor ){
-            this.state = {}
+            this.state.buttonColor = this.props.buttonColor
         }
     }
 
@@ -25,6 +25,8 @@ class Search extends Component {
 
     }
 
+    list = {};
+
     callItems = () => {
         axios.get('http://reduxblog.herokuapp.com/api/posts?key=123', {
             params: {
@@ -32,9 +34,12 @@ class Search extends Component {
             }
         })
         .then((res) => {
-          // this.setState({ videos: res.data.items });
-          console.log(res)
-          $(this.button).css({'background':'green'});
+            this.state.list = res.data.map((item)=>{
+                return <li>{item.id}</li>
+            })
+          this.setState({
+              buttonColor:'green'
+          })
         });
         // http://reduxblog.herokuapp.com/api/posts?key=123
     }
@@ -42,7 +47,10 @@ class Search extends Component {
     render() {
         return (
             <Fragment>
-                <button style={{background:this.props.buttonColor}} type="button" onClick={this.callItems} ref={(button) => this.button = button}>Call Items</button>
+                <button style={{background:this.state.buttonColor}} type="button" onClick={this.callItems} ref={(button) => this.button = button}>Call Items</button>
+                <ul>
+                    {this.state.list}
+                </ul>
                 <div className="region--left">
                     <FilterCreator/>
                 </div>
