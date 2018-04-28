@@ -32,16 +32,19 @@ class FilterCreator extends Component {
             targetIndex:idx, 
             targetIsActive:!this.props.filterList[idx].isActive
         });
+        
         // this.props.filterList[idx].isActive = !this.props.filterList[idx].isActive
     }
 
     render(){
+        // throw new Error('error occured filtercreator');
         const hideListStyle = {
             transition:'all 1s ease',
             height:'0',
             overflow:'hidden'
             // display: 'none'
         }
+        
         return (
               <Fragment>
                     {this.props.filterList.map((filter, idx)=>{
